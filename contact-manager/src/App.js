@@ -4,9 +4,13 @@ import './App.css';
 
 class App extends Component {
   render() {
+    let toggle = false;
+
+    // return React.createElement('div', { className: 'App' }, 'Hello World!');
     return (
       <div className="App">
         <h1>App Component</h1>
+        <p>{toggle ? 'true' : 'false'}</p>
         {/*
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
