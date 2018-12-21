@@ -1,11 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import './Header.css';
 
 const Header = props => {
   let { branding } = props;
+  const brandingStyle = {
+    color: 'red'
+  };
   return (
-    <div>
-      <h1> {branding} </h1>
+    <div style={{ fontSize: '20px' }}>
+      <h1 style={brandingStyle}> {branding} </h1>
     </div>
   );
 };
