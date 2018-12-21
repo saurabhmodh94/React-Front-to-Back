@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Contact from './components/Contact/Contact';
+import Header from './components/Header/Header';
 // import logo from './logo.svg';
 import './App.css';
 
@@ -10,8 +11,7 @@ class App extends Component {
     // return React.createElement('div', { className: 'App' }, 'Hello World!');
     return (
       <div className="App">
-        <h1>App Component</h1>
-        <p>{toggle ? 'true' : 'false'}</p>
+        <Header />
         <Contact />
         {/*
         <header className="App-header">
