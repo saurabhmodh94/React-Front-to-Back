@@ -11,8 +11,8 @@ class App extends Component {
     // return React.createElement('div', { className: 'App' }, 'Hello World!');
     return (
       <div className="App">
-        <Header />
-        <Contact />
+        <Header branding="Contact Manager" />
+        <Contact name="John Doe" age={22} email="john.doe@gmail.com" />
         {/*
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
