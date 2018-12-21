@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Contact from './components/Contact/Contact';
 import Header from './components/Header/Header';
 // import logo from './logo.svg';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 
 class App extends Component {
@@ -12,7 +13,9 @@ class App extends Component {
     return (
       <div className="App">
         <Header branding="Contact Manager" />
-        <Contact name="John Doe" age={22} email="john.doe@gmail.com" />
+        <div className="container">
+          <Contact name="John Doe" age={22} email="john.doe@gmail.com" />
+        </div>
         {/*
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
