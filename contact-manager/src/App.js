@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Contact from './components/Contact/Contact';
 // import logo from './logo.svg';
 import './App.css';
 
@@ -11,6 +12,7 @@ class App extends Component {
       <div className="App">
         <h1>App Component</h1>
         <p>{toggle ? 'true' : 'false'}</p>
+        <Contact />
         {/*
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
