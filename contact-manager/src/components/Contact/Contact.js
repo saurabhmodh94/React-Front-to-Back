@@ -14,8 +14,11 @@ export class Contact extends Component {
     // console.log(e, this.state, name);
     this.setState({ showContactInfo: !this.state.showContactInfo });
   };
+  onDeleteClick = id => {
+    this.props.deleteContactHandler(id); //withput passing id also works
+  };
   render() {
-    let { name, age, email } = this.props.contact;
+    let { id, name, age, email } = this.props.contact;
     return (
       <div className="card card-body mb-3">
         <h4 className="list-group-item">
@@ -23,6 +26,11 @@ export class Contact extends Component {
           <i
             onClick={this.onShowClick.bind(this, name)}
             className="fas fa-sort-down"
+          />
+          <i
+            onClick={this.onDeleteClick.bind(this, id)}
+            className="fas fa-cross"
+            style={{ color: 'red', float: 'right' }}
           />
         </h4>
         {this.state.showContactInfo ? (
