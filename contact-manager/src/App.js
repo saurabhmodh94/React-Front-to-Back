@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Contacts from './components/Contacts/Contacts';
 import Header from './components/Header/Header';
+import { Provider } from './context';
 // import logo from './logo.svg';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
@@ -11,12 +12,13 @@ class App extends Component {
 
     // return React.createElement('div', { className: 'App' }, 'Hello World!');
     return (
-      <div className="App">
-        <Header branding="Contact Manager" />
-        <div className="container">
-          <Contacts />
-        </div>
-        {/*
+      <Provider>
+        <div className="App">
+          <Header branding="Contact Manager" />
+          <div className="container">
+            <Contacts />
+          </div>
+          {/*
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
           <p>
@@ -32,7 +34,8 @@ class App extends Component {
           </a>
         </header>
          */}
-      </div>
+        </div>
+      </Provider>
     );
   }
 }
