@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 export class Contact extends Component {
   render() {
-    let { name, age, email } = this.props;
+    let { name, age, email } = this.props.contact;
     return (
       <div className="card card-body mb-3">
         <ul className="list-group">

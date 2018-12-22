@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Contact from './components/Contact/Contact';
+import Contacts from './components/Contacts/Contacts';
 import Header from './components/Header/Header';
 // import logo from './logo.svg';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -14,7 +14,7 @@ class App extends Component {
       <div className="App">
         <Header branding="Contact Manager" />
         <div className="container">
-          <Contact name="John Doe" age={22} email="john.doe@gmail.com" />
+          <Contacts />
         </div>
         {/*
         <header className="App-header">
