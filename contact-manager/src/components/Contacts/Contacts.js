@@ -23,11 +23,11 @@ export class Contacts extends Component {
   }
   render() {
     return (
-      <div>
+      <React.Fragment>
         {this.state.contacts.map(contact => (
           <Contact key={contact.id} contact={contact} />
         ))}
-      </div>
+      </React.Fragment>
     );
   }
 }
