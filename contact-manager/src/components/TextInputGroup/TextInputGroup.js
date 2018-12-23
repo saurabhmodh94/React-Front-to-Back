@@ -16,11 +16,12 @@ const TextInputGroup = ({
       <input
         type={type}
         name={name}
-        className="form-control form-control-lg"
+        className={`${error ? 'is-invalid' : ''} form-control form-control-lg`}
         placeholder={placeholder}
         value={value}
         onChange={onChange}
       />
+      {error && <div className="invalid-feedback">{error}</div>}
     </div>
   );
 };

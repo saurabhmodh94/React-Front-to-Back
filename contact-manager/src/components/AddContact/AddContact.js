@@ -27,6 +27,21 @@ class AddContact extends Component {
       email,
       age
     }; //ES6
+    // Check For Errors or Use required
+    if (name === '') {
+      this.setState({ errors: { name: 'Name is required' } });
+      return;
+    }
+
+    if (email === '') {
+      this.setState({ errors: { email: 'Email is required' } });
+      return;
+    }
+
+    if (age === '') {
+      this.setState({ errors: { age: 'Age is required' } });
+      return;
+    }
 
     dispatch({ type: 'ADD_CONTACT', payload: new_contact });
 
@@ -65,6 +80,7 @@ class AddContact extends Component {
                     // ref="nameInput"
                     value={name}
                     onChange={this.onChange}
+                    error={this.state.errors.name}
                   />
                   <TextInputGroup
                     label="Email"
@@ -73,6 +89,7 @@ class AddContact extends Component {
                     placeholder="Enter Email..."
                     value={email}
                     onChange={this.onChange}
+                    error={this.state.errors.email}
                   />
                   <TextInputGroup
                     label="Age"
@@ -81,6 +98,7 @@ class AddContact extends Component {
                     placeholder="Enter Age..."
                     value={age}
                     onChange={this.onChange}
+                    error={this.state.errors.age}
                   />
                   <input
                     type="submit"
