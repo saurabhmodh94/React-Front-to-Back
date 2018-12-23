@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import uuid from 'uuid';
+import TextInputGroup from './../TextInputGroup/TextInputGroup';
 import { Consumer } from './../../context';
 class AddContact extends Component {
   constructor(props) {
@@ -7,7 +8,7 @@ class AddContact extends Component {
     this.nameInput = React.createRef();
   }
   state = {
-    // name: '',
+    name: '',
     email: '',
     age: '',
     errors: {}
@@ -18,8 +19,8 @@ class AddContact extends Component {
   };
   onSubmit = (dispatch, e) => {
     e.preventDefault();
-    const { email, age } = this.state;
-    const name = this.nameInput.current.value;
+    const { name, email, age } = this.state;
+    // const name = this.nameInput.current.value;
     const new_contact = {
       id: uuid(),
       name,
@@ -30,9 +31,9 @@ class AddContact extends Component {
     dispatch({ type: 'ADD_CONTACT', payload: new_contact });
 
     // clear state
-    this.nameInput.current.value = '';
+    // this.nameInput.current.value = '';
     this.setState({
-      // name: '',
+      name: '',
       email: '',
       age: '',
       errors: {}
@@ -54,40 +55,33 @@ class AddContact extends Component {
               <div className="card-header">Add Contact</div>
               <div className="card-body">
                 <form onSubmit={this.onSubmit.bind(this, dispatch)}>
-                  <div className="form-group">
-                    <label htmlFor="name">Name</label>
-                    <input
-                      type="text"
-                      name="name"
-                      className="form-control form-control-lg"
-                      placeholder="Enter Name..."
-                      defaultValue={name}
-                      ref={this.nameInput}
-                      // ref="nameInput"
-                    />
-                  </div>
-                  <div className="form-group">
-                    <label htmlFor="email">Email</label>
-                    <input
-                      type="email"
-                      name="email"
-                      className="form-control form-control-lg"
-                      placeholder="Enter Email..."
-                      value={email}
-                      onChange={this.onChange}
-                    />
-                  </div>
-                  <div className="form-group">
-                    <label htmlFor="age">Age</label>
-                    <input
-                      type="number"
-                      name="age"
-                      className="form-control form-control-lg"
-                      placeholder="Enter Age..."
-                      value={age}
-                      onChange={this.onChange}
-                    />
-                  </div>
+                  <TextInputGroup
+                    label="Name"
+                    type="text"
+                    name="name"
+                    placeholder="Enter Name..."
+                    // defaultValue={name}
+                    // ref={this.nameInput}
+                    // ref="nameInput"
+                    value={name}
+                    onChange={this.onChange}
+                  />
+                  <TextInputGroup
+                    label="Email"
+                    type="email"
+                    name="email"
+                    placeholder="Enter Email..."
+                    value={email}
+                    onChange={this.onChange}
+                  />
+                  <TextInputGroup
+                    label="Age"
+                    type="number"
+                    name="age"
+                    placeholder="Enter Age..."
+                    value={age}
+                    onChange={this.onChange}
+                  />
                   <input
                     type="submit"
                     value="Add Contact"
