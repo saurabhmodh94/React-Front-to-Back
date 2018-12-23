@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Contacts from './components/Contacts/Contacts';
+import About from './components/About/About';
 import Header from './components/Header/Header';
 import AddContact from './components/AddContact/AddContact';
 
@@ -18,8 +20,13 @@ class App extends Component {
         <div className="App">
           <Header branding="Contact Manager" />
           <div className="container">
-            <AddContact />
-            <Contacts />
+            <Router>
+              <Switch>
+                <Route exact path="/" component={Contacts} />
+                <Route exact path="/about" component={About} />
+                <Route exact path="/contact/add" component={AddContact} />
+              </Switch>
+            </Router>
           </div>
           {/*
         <header className="App-header">
