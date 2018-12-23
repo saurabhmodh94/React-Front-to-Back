@@ -17,18 +17,18 @@ class App extends Component {
     // return React.createElement('div', { className: 'App' }, 'Hello World!');
     return (
       <Provider>
-        <div className="App">
-          <Header branding="Contact Manager" />
-          <div className="container">
-            <Router>
+        <Router>
+          <div className="App">
+            <Header branding="Contact Manager" />
+            <div className="container">
               <Switch>
                 <Route exact path="/" component={Contacts} />
-                <Route exact path="/about" component={About} />
+                <Route exact path="/about/:id" component={About} />
+                <Route exact path="/about/" component={About} />
                 <Route exact path="/contact/add" component={AddContact} />
               </Switch>
-            </Router>
-          </div>
-          {/*
+            </div>
+            {/*
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
           <p>
@@ -44,7 +44,8 @@ class App extends Component {
           </a>
         </header>
          */}
-        </div>
+          </div>
+        </Router>
       </Provider>
     );
   }
