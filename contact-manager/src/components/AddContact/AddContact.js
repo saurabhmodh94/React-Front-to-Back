@@ -1,8 +1,12 @@
 import React, { Component } from 'react';
 
 class AddContact extends Component {
+  constructor(props) {
+    super(props);
+    this.nameInput = React.createRef();
+  }
   state = {
-    name: '',
+    // name: '',
     email: '',
     phone: '',
     errors: {}
@@ -13,9 +17,18 @@ class AddContact extends Component {
   };
   onSubmit = e => {
     e.preventDefault();
+    console.log({
+      ...this.state,
+      name: this.nameInput.current.value
+      // name: this.refs.nameInput.value.trim() //old api
+    });
+  };
+  static defaultProps = {
+    name: ''
   };
   render() {
-    const { name, email, phone } = this.state;
+    const { email, phone } = this.state;
+    const { name } = this.props;
     return (
       <div className="card mb-3">
         <div className="card-header">Add Contact</div>
@@ -28,8 +41,9 @@ class AddContact extends Component {
                 name="name"
                 className="form-control form-control-lg"
                 placeholder="Enter Name..."
-                value={name}
-                onChange={this.onChange}
+                defaultValue={name}
+                ref={this.nameInput}
+                // ref="nameInput"
               />
             </div>
             <div className="form-group">
