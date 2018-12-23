@@ -33,7 +33,7 @@ export class Contact extends Component {
                 />
                 <i
                   onClick={this.onDeleteClick.bind(this, id, value.dispatch)}
-                  className="fas fa-cross"
+                  className="fas fa-times"
                   style={{ color: 'red', float: 'right' }}
                 />
               </h4>

@@ -10,7 +10,7 @@ import './App.css';
 
 class App extends Component {
   render() {
-    let toggle = false;
+    // let toggle = false;
 
     // return React.createElement('div', { className: 'App' }, 'Hello World!');
     return (
