@@ -5,7 +5,7 @@ import { Consumer } from './../../context';
 class AddContact extends Component {
   constructor(props) {
     super(props);
-    this.nameInput = React.createRef();
+    // this.nameInput = React.createRef();
   }
   state = {
     name: '',
@@ -53,13 +53,16 @@ class AddContact extends Component {
       age: '',
       errors: {}
     });
+
+    //redirect
+    this.props.history.push('/');
   };
   static defaultProps = {
     name: ''
   };
   render() {
-    const { email, age } = this.state;
-    const { name } = this.props;
+    const { name, email, age } = this.state;
+    // const { name } = this.props;
 
     return (
       <Consumer>
