@@ -20,7 +20,7 @@ class App extends Component {
     // return React.createElement('div', { className: 'App' }, 'Hello World!');
     return (
       <Provider>
-        <Router>
+        <Router basename={process.env.PUBLIC_URL}>
           <div className="App">
             <Header branding="Contact Manager" />
             <div className="container">
