@@ -27,20 +27,22 @@ export class Provider extends Component {
     contacts: [],
     dispatch: action => this.setState(state => reducer(state, action))
   };
-  componentDidMount() {
-    axios
-      .get('https://jsonplaceholder.typicode.com/users')
-      .then(response =>
-        // handle success
-        this.setState({ contacts: response.data })
-      )
-      .catch(error =>
-        // handle error
-        console.log(error)
-      )
-      .then(() => {
-        // always executed
-      });
+  async componentDidMount() {
+    const response = await axios.get(
+      'https://jsonplaceholder.typicode.com/users'
+    );
+    // .then(response =>
+    //   // handle success
+    //   this.setState({ contacts: response.data })
+    // )
+    // .catch(error =>
+    //   // handle error
+    //   console.log(error)
+    // )
+    // .then(() => {
+    //   // always executed
+    // });
+    this.setState({ contacts: response.data });
   }
   render() {
     return (

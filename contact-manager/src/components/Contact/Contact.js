@@ -16,10 +16,15 @@ export class Contact extends Component {
     // console.log(e, this.state, name);
     this.setState({ showContactInfo: !this.state.showContactInfo });
   };
-  onDeleteClick = (id, dispatch) => {
-    axios
-      .delete(`https://jsonplaceholder.typicode.com/users/${id}/`)
-      .then(res => dispatch({ type: 'DELETE_CONTACT', payload: id }));
+  onDeleteClick = async (id, dispatch) => {
+    try {
+      await axios.delete(`https://jsonplaceholder.typicode.com/users/${id}/`);
+    } catch (e) {
+      console.log(e);
+    } finally {
+      dispatch({ type: 'DELETE_CONTACT', payload: id });
+    }
+    // .then(res => dispatch({ type: 'DELETE_CONTACT', payload: id }));
   };
   render() {
     return (
