@@ -10,7 +10,7 @@ class AddContact extends Component {
   state = {
     name: '',
     email: '',
-    age: '',
+    phone: '',
     errors: {}
   };
 
@@ -19,13 +19,13 @@ class AddContact extends Component {
   };
   onSubmit = (dispatch, e) => {
     e.preventDefault();
-    const { name, email, age } = this.state;
+    const { name, email, phone } = this.state;
     // const name = this.nameInput.current.value;
     const new_contact = {
       id: uuid(),
       name,
       email,
-      age
+      phone
     }; //ES6
     // Check For Errors or Use required
     if (name === '') {
@@ -38,8 +38,8 @@ class AddContact extends Component {
       return;
     }
 
-    if (age === '') {
-      this.setState({ errors: { age: 'Age is required' } });
+    if (phone === '') {
+      this.setState({ errors: { phone: 'Phone is required' } });
       return;
     }
 
@@ -50,7 +50,7 @@ class AddContact extends Component {
     this.setState({
       name: '',
       email: '',
-      age: '',
+      phone: '',
       errors: {}
     });
 
@@ -61,7 +61,7 @@ class AddContact extends Component {
     name: ''
   };
   render() {
-    const { name, email, age } = this.state;
+    const { name, email, phone } = this.state;
     // const { name } = this.props;
 
     return (
@@ -95,13 +95,13 @@ class AddContact extends Component {
                     error={this.state.errors.email}
                   />
                   <TextInputGroup
-                    label="Age"
-                    type="number"
-                    name="age"
-                    placeholder="Enter Age..."
-                    value={age}
+                    label="Phone"
+                    type="text"
+                    name="phone"
+                    placeholder="Enter Phone..."
+                    value={phone}
                     onChange={this.onChange}
-                    error={this.state.errors.age}
+                    error={this.state.errors.phone}
                   />
                   <input
                     type="submit"

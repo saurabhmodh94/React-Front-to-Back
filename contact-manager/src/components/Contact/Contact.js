@@ -22,7 +22,7 @@ export class Contact extends Component {
     return (
       <Consumer>
         {value => {
-          let { id, name, age, email } = this.props.contact;
+          let { id, name, phone, email } = this.props.contact;
           return (
             <div className="card card-body mb-3">
               <h4 className="list-group-item">
@@ -39,7 +39,7 @@ export class Contact extends Component {
               </h4>
               {this.state.showContactInfo ? (
                 <ul className="list-group">
-                  <li className="list-group-item"> Age: {age}</li>
+                  <li className="list-group-item"> Phone: {phone}</li>
                   <li className="list-group-item"> Email: {email}</li>
                 </ul>
               ) : null}

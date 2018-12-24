@@ -27,13 +27,13 @@ export class Provider extends Component {
       {
         id: 1,
         name: 'John Doe',
-        age: 22,
+        phone: '1-463-123-4447',
         email: 'john.doe@gmail.com'
       },
       {
         id: 2,
         name: 'New Doe',
-        age: 23,
+        phone: '1-463-123',
         email: 'new.doe@gmail.com'
       }
     ],
