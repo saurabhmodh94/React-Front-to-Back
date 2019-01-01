@@ -4,7 +4,8 @@ import Contact from './../Contact/Contact';
 
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import { GET_CONTACTS } from '../../actions/types';
+// import { GET_CONTACTS } from '../../actions/types';
+import { getContacts } from '../../actions/contactActions';
 
 export class Contacts extends Component {
   componentDidMount() {
@@ -41,11 +42,11 @@ const mapStateToProps = state => ({
   contacts: state.contacts.contacts
 });
 
-const mapDispatchToProps = dispatch => ({
-  getContacts: () => dispatch({ type: GET_CONTACTS })
-});
+// const mapDispatchToProps = dispatch => ({
+//   getContacts: () => dispatch({ type: GET_CONTACTS })
+// });
 
 export default connect(
   mapStateToProps,
-  mapDispatchToProps
+  { getContacts }
 )(Contacts);
