@@ -40,11 +40,11 @@ export class Contact extends Component {
                   onClick={this.onShowClick.bind(this, name)}
                   className="fas fa-sort-down"
                 />
-                <i
+                {/* <i
                   onClick={this.onDeleteClick.bind(this, id, value.dispatch)}
                   className="fas fa-times"
                   style={{ cursor: 'pointer', color: 'red', float: 'right' }}
-                />
+                /> */}
                 <Link to={`contact/edit/${id}`}>
                   <i
                     className="fas fa-pencil-alt"
