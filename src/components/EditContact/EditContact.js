@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import axios from 'axios';
+// import axios from 'axios';
 import TextInputGroup from './../TextInputGroup/TextInputGroup';
-import { Consumer } from './../../context';
+// import { Consumer } from './../../context';
 
 import { connect } from 'react-redux';
 import { getContact, updateContact } from '../../actions/contactActions';

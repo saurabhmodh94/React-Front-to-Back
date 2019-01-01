@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import uuid from 'uuid';
-import axios from 'axios';
+// import axios from 'axios';
 import TextInputGroup from './../TextInputGroup/TextInputGroup';
-import { Consumer } from './../../context';
+// import { Consumer } from './../../context';
 import { connect } from 'react-redux';
 import { addContact } from '../../actions/contactActions';
 
