@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { HashRouter as Router, Route, Switch } from 'react-router-dom';
+import store from './store';
 import Contacts from './components/Contacts/Contacts';
 import About from './components/Pages/About';
 import NotFound from './components/Pages/NotFound';
@@ -7,7 +8,8 @@ import Header from './components/Header/Header';
 import AddContact from './components/AddContact/AddContact';
 import Test from './components/Test/Test';
 
-import { Provider } from './context';
+// import { Provider } from './context';
+import { Provider } from 'react-redux';
 // import logo from './logo.svg';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
@@ -19,7 +21,7 @@ class App extends Component {
 
     // return React.createElement('div', { className: 'App' }, 'Hello World!');
     return (
-      <Provider>
+      <Provider store={store}>
         <Router>
           <div className="App">
             <Header branding="Contact Manager" />
